@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link with Visited State Example</title>
+  <style>
+    /* Base style for the "button-like" link */
+    .styled-button {
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    /* Hover state */
+    .styled-button:hover {
+      background-color: red;
+    }
+
+    /* Focus state */
+    .styled-button:focus {
+      outline: none;
+      background-color: green;
+    }
+
+    /* Active state (when clicking the button) */
+    .styled-button:active {
+      background-color: purple;
+    }
+
+    /* Visited state (only affects color) */
+    .styled-button:visited {
+      color: lightgray;
+    }
+  </style>
+</head>
+<body>
+  <!-- Link styled as a button -->
+  <a href="https://www.youtube.com/" class="styled-button">Visit Youtube.com</a>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Layout Techniques</title>
+    <style>
+        /* 1. Inline vs Block Elements */
+        .inline-example {
+            display: inline;
+            color: white;
+            background-color: rgb(86, 86, 147);
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .block-example {
+            display: block;
+            color: white;
+            background-color: rgb(146, 48, 102);
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        /* 2. Flexbox Layout */
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(118, 210, 155);
+            padding: 10px;
+        }
+
+        .flex-container div {
+            background-color: #a9081b;
+            color: white;
+            padding: 10px;
+            flex: 1; /* Each flex item takes equal space */
+            margin: 5px;
+        }
+
+        /* 3. Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            background-color: lightblue;
+            padding: 10px;
+        }
+
+        .grid-container div {
+            background-color: #3245a6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* 4. Flow Layout: Inline-block */
+        .inline-block-example {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: coral;
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+        }
+
+        /* 5. Floats */
+        .float-container {
+            overflow: auto; /* Clears the float */
+            padding: 10px;
+            background-color: lightyellow;
+        }
+
+        .float-container img {
+            float: left;
+            margin-right: 10px;
+            width: 100px;
+            height: 100px;
+        }
+
+        /* 6. Multicolumn Layout */
+        .multicolumn {
+            column-count: 2;
+            column-gap: 20px;
+            background-color: lightcoral;
+            padding: 10px;
+            color: white;
+        }
+
+        /* 7. Positioning */
+        .relative-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: lightgreen;
+            margin: 20px;
+        }
+
+        .relative-item {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: teal;
+            color: white;
+            padding: 10px;
+        }
+
+        .fixed-item {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: darkred;
+            color: white;
+            padding: 10px;
+        }
+
+        .sticky-container {
+            padding: 100px 10px;
+            height: 2000px; /* To make the page scroll */
+        }
+
+        .sticky-item {
+            position: sticky;
+            top: 0;
+            background-color: darkblue;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Layout Techniques Demo</h1>
+
+    <!-- 1. Inline vs Block Elements -->
+    <section>
+        <h2>Inline vs Block Elements</h2>
+        <span class="inline-example">Inline Element</span>
+        <span class="inline-example">Another Inline Element</span>
+        <div class="block-example">Block Element</div>
+        <div class="block-example">Another Block Element</div>
+    </section>
+
+    <!-- 2. Flexbox Layout -->
+    <section>
+        <h2>Flexbox Layout</h2>
+        <div class="flex-container">
+            <div>Flex Item 1</div>
+            <div>Flex Item 2</div>
+            <div>Flex Item 3</div>
+        </div>
+    </section>
+
+    <!-- 3. Grid Layout -->
+    <section>
+        <h2>Grid Layout</h2>
+        <div class="grid-container">
+            <div>Grid Item 1</div>
+            <div>Grid Item 2</div>
+            <div>Grid Item 3</div>
+            <div>Grid Item 4</div>
+            <div>Grid Item 5</div>
+            <div>Grid Item 6</div>
+        </div>
+    </section>
+
+    <!-- 4. Flow Layout: Inline-block -->
+    <section>
+        <h2>Flow Layout: Inline-block</h2>
+        <span class="inline-block-example">A</span>
+        <span class="inline-block-example">B</span>
+        <span class="inline-block-example">C</span>
+    </section>
+
+    <!-- 5. Floats -->
+    <section>
+        <h2>Floats</h2>
+        <div class="float-container">
+            <img src="https://via.placeholder.com/100" alt="Placeholder Image">
+            <p>This is a paragraph that wraps around the image, demonstrating how floats work. The image floats to the left, and the text flows around it. Floats are commonly used for text wrapping around images or other elements.</p>
+        </div>
+    </section>
+
+    <!-- 6. Multicolumn Layout -->
+    <section>
+        <h2>Multicolumn Layout</h2>
+        <div class="multicolumn">
+            <p>This is a long text that spans multiple columns. CSS multicolumn layout allows you to create a newspaper-like layout where the text flows naturally across columns. This technique can be helpful in designing responsive layouts that improve readability by reducing excessive whitespace and scrolling.</p>
+        </div>
+    </section>
+
+    <!-- 7. Positioning -->
+    <section>
+        <h2>Positioning</h2>
+        
+        <!-- Relative and Absolute Positioning -->
+        <div class="relative-container">
+            <div class="relative-item">Absolute Positioned Item</div>
+            <p>Relative Container</p>
+        </div>
+
+        <!-- Fixed Positioning -->
+        <div class="fixed-item">Fixed Positioned Item (Stays in viewport)</div>
+
+        <!-- Sticky Positioning -->
+        <div class="sticky-container">
+            <div class="sticky-item">Sticky Positioned Item (Sticks on scroll)</div>
+            <p>Scroll down to see the sticky element stay at the top.</p>
+        </div>
+    </section>
+
+</body>
+</html>
