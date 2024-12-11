@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fetch the data</h1>
+    <p>Click the button to load more</p>
+    <div id="posts">Load more posts...</div>
+    <button id="fetch more" aria-label="Load More">Fetch more</button>
+    <script>
+        
+        document.getElementById("fetch more").addEventListener("click",function(){
+            loadPost();
+        });
+        function loadPost(){
+            const url = `https://jsonplaceholder.typicode.com/posts`;
+            fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Url not found: ${response.status}`);
+                }
+                return response.json(); 
+            })
+            .then(data => {
+                const postsContainer=document.getElementById("posts");
+                data.forEach(post => {
+                    const postElement=document.createElement("div");
+                    postElement.innerHTML =`
+                    <div class="post-title">Post #${post.id}: ${post.title}</div>
+                    <p>${post.body}</p>`;
+                    postsContainer.appendChild(postElement);
+
+                });
+            })
+            .catch(error => {
+                console.error("Error while fetching posts:", error);
+
+            });
+        }
+        
+    </script>
+</body>
+</html>
